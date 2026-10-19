@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+</head>
+<body>
+    <h1>Registro</h1>
+    <form action="/register", method = "post">
+        <label for="name">Nombre</label>
+        <input type="text" name="nombre" id=""><br>
+        <label for="last_name">Apellido</label>
+        <input type="text" name="apellido"><br>
+        <label for="email">Email</label>
+        <input type="email" name="email"><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id=""><br>
+        <label for="confirm_pw">Confirm PW</label>
+        <input type="password" name="confirm_pw" id=""><br>
+        <input type="submit" value="Register"><br>
+    </form>
+    {% for m in get_flashed_messages(category_filter=["registro"]) %}
+    <p class="error">{{ m }}</p>
+    {% endfor %}
+    <br>
+    <h2>Iniciar Sesión</h2>
+    <form action="/login" method="post">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="">
+        <input type="submit" value="Login">
+    </form>
+    {% for m in get_flashed_messages(category_filter=["login"]) %}
+    <p class="error">{{ m }}</p>
+    {% endfor %}
+
+</body>
+</html>
