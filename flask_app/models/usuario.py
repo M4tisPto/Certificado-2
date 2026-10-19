@@ -33,7 +33,7 @@ class Usuario:
         return [cls(result) for result in results] if results else []
     @classmethod
     def get_by_email(cls, data):
-        query = "SELECT * FROM usuario WHERE email = %(email)s"
+        query = "SELECT * FROM usuarios WHERE email = %(email)s"
         results = connectToMySQL(DB).query_db(query, data)
         if len(results) == 1:
             user = cls(results[0])

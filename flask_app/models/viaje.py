@@ -18,4 +18,13 @@ class Viaje:
         query = "INSERT INTO viajes (destino, fecha_inicio, fecha_fin, itinerario, created_at, updated_at, usuario_id) VALUES (%(destino)s, %(fecha_inicio)s, %(fecha_fin)s, %(itinerario)s, NOW(), NOW(), %(usuario_id)s)"
         result = connectToMySQL(DB).query_db(query, data)
         return result
-    
+    @classmethod
+    def get_all(cls):
+        query = "SELECT * FROM viajes LEFT JOIN usuarios ON viajes.usuario_id = usuarios.id"
+        result = connectToMySQL(DB).query_db(query)
+        return result
+    @classmethod
+    def get_by_id(cls, data):
+        query = "SELECT * FROM viajes LEFT JOIN usuarios ON viajes.usuario_id = usuarios.id WHERE viajes.id = %(id)s;"
+        results = connectToMySQL(DB).query_db(query, data)
+        return cls(results[0]) if results else None

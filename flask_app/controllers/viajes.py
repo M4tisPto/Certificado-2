@@ -5,7 +5,7 @@ from flask_app import app
 
 @app.route("/nuevo")
 def nuevo_viaje():
-    if "user_id" not in session:
+    if "usuario_id" not in session:
         return redirect("/")
     user = Usuario.get_one({"id": session["usuario_id"]})
     if not user:
@@ -18,3 +18,17 @@ def agregar_viaje():
     Viaje.save(data)
 
     return redirect("/dashboard")
+
+@app.route("/ver/<int:id>")
+
+def ver_viaje(id):
+    if "usuario_id" not in session:
+        return redirect("/")
+    user = Usuario.get_one({"id": session["usuario_id"]})
+    if not user:
+        return redirect("/")
+    data = {
+        "id": id
+    }
+    viaje = Viaje.get_by_id(data)
+    return render_template("ver_viaje.html", viaje = viaje)
