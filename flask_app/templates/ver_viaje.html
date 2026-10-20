@@ -11,8 +11,13 @@
         <a href="/logout">Cerrar sesión</a>
     </header>
     <main>
-        {{ viaje.id }}
-        {{ viaje.nombre }}
+        <h2>{{ viaje.destino }}</h2>
+        <ul>
+            <li><b>Organizador: </b>{{viaje.nombre}}</li>
+            <li><b>Fecha Inicio: </b>{{viaje.fecha_inicio}}</li>
+            <li><b>Fecha Fin: </b>{{viaje.fecha_fin}}</li>
+            <li><b>Itinerario: </b>{{viaje.itinerario}}</li>
+        </ul>
     </main>
 </body>
 </html>

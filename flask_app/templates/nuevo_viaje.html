@@ -12,15 +12,19 @@
         <a href="/logout">Cerrar Sesión</a>
     </header>
     <main>
+        {% for m in get_flashed_messages(category_filter=["journey"]) %}
+        <p class="error">{{ m }}</p>
+        {% endfor %}
+
         <form action="/agregar_viaje" method="post">
             <label for="destino">Destino</label>
-            <input type="text" name="destino"><br>
+            <input type="text" name="destino" required><br>
             <label for="fecha_inicio">Fecha de Inicio</label>
-            <input type="date" name="fecha_inicio" id=""><br>
+            <input type="date" name="fecha_inicio" id="" required><br>
             <label for="fecha_fin">Fecha de Fin</label>
-            <input type="date" name="fecha_fin" id=""><br>
+            <input type="date" name="fecha_fin" id="" required><br>
             <label for="itinerario">Itinerario</label>
-            <textarea name="itinerario" id="">Pon tu texto aqui.</textarea>
+            <textarea name="itinerario" id="" required>Pon tu texto aqui.</textarea>
             <input type="submit" value="Guardar">
         </form>
     </main>

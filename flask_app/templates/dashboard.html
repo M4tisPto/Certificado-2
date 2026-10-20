@@ -35,7 +35,7 @@
                         <a href="/ver/{{ viaje.id }}">Ver</a>
                         {% if viaje.usuario_id == user.id %}
                         <a href="/editar/{{ viaje.id }}">Editar</a>
-                        <a href="#">Borrar</a>
+                        <a href="/borrar_viaje/{{viaje.id}}">Borrar</a>
                         {% endif %}
                     </td>
                 </tr>

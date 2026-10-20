@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start</title>
+    <title>Viaje Frecuente</title>
 </head>
 <body>
     <h1>Registro</h1>
     <form action="/register", method = "post">
-        <label for="name">Nombre</label>
-        <input type="text" name="nombre" id=""><br>
+        <label for="name" >Nombre</label>
+        <input type="text" name="nombre" id="" required><br>
         <label for="last_name">Apellido</label>
-        <input type="text" name="apellido"><br>
+        <input type="text" name="apellido" required><br>
         <label for="email">Email</label>
-        <input type="email" name="email"><br>
+        <input type="email" name="email" required><br>
         <label for="password">Password</label>
-        <input type="password" name="password" id=""><br>
+        <input type="password" name="password" id="" required><br>
         <label for="confirm_pw">Confirm PW</label>
-        <input type="password" name="confirm_pw" id=""><br>
+        <input type="password" name="confirm_pw" id="" required><br>
         <input type="submit" value="Register"><br>
     </form>
-    {% for m in get_flashed_messages(category_filter=["registro"]) %}
+    {% for m in get_flashed_messages(category_filter=["register"]) %}
     <p class="error">{{ m }}</p>
     {% endfor %}
     <br>
