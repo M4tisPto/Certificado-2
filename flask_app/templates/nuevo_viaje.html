@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/nuevo_viaje.css">
     <title>Nuevo Viaje</title>
 </head>
 <body>
     <header>
         <h1>Nuevo Viaje</h1>
-        <a href="/dashboard">Inicio</a>
-        <a href="/logout">Cerrar Sesión</a>
+        <div>
+            <a href="/dashboard">Inicio</a>
+            <a href="/logout">Cerrar Sesión</a>
+        </div>
     </header>
     <main>
         {% for m in get_flashed_messages(category_filter=["journey"]) %}

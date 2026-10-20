@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/editar_viaje.css">
     <title>Editar Viaje</title>
 </head>
 <body>
     <header>
         <h1>Editar Viaje</h1>
-        <a href="/dashboard">Inicio</a>
-        <a href="/logout">Cerrar Sesión</a>
+        <div>
+            <a href="/dashboard">Inicio</a>
+            <a href="/logout">Cerrar Sesión</a>
+
+        </div>
     </header>
     <main>
         {% for m in get_flashed_messages(category_filter=["journey"]) %}
@@ -24,7 +28,7 @@
             <label for="fecha_fin">Fecha de Fin</label>
             <input type="date" name="fecha_fin" value="{{ viaje.fecha_fin }}" required><br>
             <label for="itinerario">Itinerario</label>
-            <textarea name="itinerario" id="" required>{{ viaje.itinerario }}</textarea>
+            <textarea name="itinerario" id="" required>{{ viaje.itinerario }}</textarea><br>
             <input type="submit" value="Guardar">
         </form>
     </main>

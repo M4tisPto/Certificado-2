@@ -3,38 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index.css">
     <title>Viaje Frecuente</title>
 </head>
 <body>
-    <h1>Registro</h1>
-    <form action="/register", method = "post">
-        <label for="name" >Nombre</label>
-        <input type="text" name="nombre" id="" required><br>
-        <label for="last_name">Apellido</label>
-        <input type="text" name="apellido" required><br>
-        <label for="email">Email</label>
-        <input type="email" name="email" required><br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="" required><br>
-        <label for="confirm_pw">Confirm PW</label>
-        <input type="password" name="confirm_pw" id="" required><br>
-        <input type="submit" value="Register"><br>
-    </form>
-    {% for m in get_flashed_messages(category_filter=["register"]) %}
-    <p class="error">{{ m }}</p>
-    {% endfor %}
-    <br>
-    <h2>Iniciar Sesión</h2>
-    <form action="/login" method="post">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="">
-        <input type="submit" value="Login">
-    </form>
-    {% for m in get_flashed_messages(category_filter=["login"]) %}
-    <p class="error">{{ m }}</p>
-    {% endfor %}
+    <main>
+
+        <section>
+            <h1>Registro</h1>
+            <form action="/register", method = "post">
+                <label for="name" >Nombre</label>
+                <input type="text" name="nombre" id="" required><br>
+                <label for="last_name">Apellido</label>
+                <input type="text" name="apellido" required><br>
+                <label for="email">Email</label>
+                <input type="email" name="email" required><br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="" required><br>
+                <label for="confirm_pw">Confirm PW</label>
+                <input type="password" name="confirm_pw" id="" required><br>
+                <input type="submit" value="Register"><br>
+            </form>
+            {% for m in get_flashed_messages(category_filter=["register"]) %}
+            <p class="error">{{ m }}</p>
+            {% endfor %}
+        </section>
+        <section>
+            <h2>Iniciar Sesión</h2>
+            <form action="/login" method="post">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="" required><br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="" required><br>
+                <input type="submit" value="Login">
+            </form>
+            {% for m in get_flashed_messages(category_filter=["login"]) %}
+            <p class="error">{{ m }}</p>
+            {% endfor %}
+        </section>
+    </main>
 
 </body>
 </html>

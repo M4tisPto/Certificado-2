@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
     <title>Viaje Frecuente</title>
 </head>
 
 <body>
     <header>
         <h1>Bienvenid@ {{ user.nombre }}</h1>
-        <a href="/logout">Cerrar Sesión</a>
-        <a href="/nuevo">Organizar Viaje</a>
+        <div>
+            <a href="/logout">Cerrar Sesión</a>
+            <a href="/nuevo">Organizar Viaje</a>
+
+        </div>
     </header>
     <main>
         <table>
